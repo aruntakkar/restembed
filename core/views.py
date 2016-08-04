@@ -20,8 +20,8 @@ def save_embed(request):
             serializer = EmbedSerializer(data=json)
             if serializer.is_valid():
                 embed = serializer.save()
-                return render(request, 'embes.html', {'embed': embed})
-        else:
-            form = SubmitEmbed()
+                return render(request, 'core/embeds.html', {'embed': embed})
+    else:
+        form = SubmitEmbed()
 
-        return render(request, 'index.html', {'form': form})
+    return render(request, 'core/index.html', {'form': form})
